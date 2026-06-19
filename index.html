@@ -179,9 +179,24 @@
             color: var(--gold);
         }
 
-        .nav-actions {
-            display: none;
+        .nav-right {
+            display: flex;
+            align-items: center;
             gap: 10px;
+        }
+
+        .nav-wsp {
+            display: none;
+        }
+
+        .nav-agendar {
+            font-size: 13px;
+        }
+
+        @media(max-width: 899px) {
+            .nav-agendar {
+                padding: 10px 16px;
+            }
         }
 
         .hamburger {
@@ -204,8 +219,8 @@
                 display: flex;
             }
 
-            .nav-actions {
-                display: flex;
+            .nav-wsp {
+                display: inline-flex;
             }
 
             .hamburger {
@@ -1267,14 +1282,15 @@
             <a href="#resultados">Resultados</a>
             <a href="#contacto">Contacto</a>
         </div>
-        <div class="nav-actions">
+        <div class="nav-right">
             <!-- EDITABLE: Botones Nav (Href y número WhatsApp) -->
-            <a href="https://wa.me/1234567890" target="_blank" class="btn btn-wsp"><i class="fab fa-whatsapp"></i>
-                WhatsApp</a>
-            <a href="agendar.html" class="btn btn-gold"><i class="fas fa-calendar-check"></i> Agendar cita</a>
+            <a href="https://wa.me/1234567890" target="_blank" class="btn btn-wsp nav-wsp"><i
+                    class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="agendar.html" class="btn btn-gold nav-agendar"><i class="fas fa-calendar-check"></i> Agendar
+                cita</a>
+            <button class="hamburger" onclick="document.getElementById('mobMenu').classList.add('active')"><i
+                    class="fas fa-bars"></i></button>
         </div>
-        <button class="hamburger" onclick="document.getElementById('mobMenu').classList.add('active')"><i
-                class="fas fa-bars"></i></button>
     </nav>
 
     <!-- SECCIÓN 1: HERO -->
@@ -1794,7 +1810,6 @@
     <a href="https://wa.me/1234567890" target="_blank" class="fab-wsp"><i class="fab fa-whatsapp"></i></a>
 
     <div class="mob-bar">
-        <a href="agendar.html" class="btn btn-dark">📅 Agendar</a>
         <a href="https://wa.me/1234567890" target="_blank" class="btn btn-wsp" style="background:#fff;">💬 WhatsApp</a>
     </div>
 
