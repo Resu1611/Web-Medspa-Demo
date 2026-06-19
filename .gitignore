@@ -1,0 +1,16 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+
+# Backups / artefactos
+lumina-medspa.zip
+
+# Tooling de Claude / skills (no forman parte del sitio)
+.claude/
+.agent/
+.agents/

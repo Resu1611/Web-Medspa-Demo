@@ -1,0 +1,8 @@
+{
+  "name": "Lumina MedSpa",
+  "description": "A premium luxury MedSpa website template featuring elegant design, smooth animations, and responsive sections for treatments and booking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
