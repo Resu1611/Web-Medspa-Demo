@@ -15,6 +15,15 @@ export default defineConfig(({mode}) => {
         '@': path.resolve(__dirname, '.'),
       },
     },
+    build: {
+      rollupOptions: {
+        // Multi-página: incluir agendar.html en el build de producción
+        input: {
+          main: path.resolve(__dirname, 'index.html'),
+          agendar: path.resolve(__dirname, 'agendar.html'),
+        },
+      },
+    },
     server: {
       // HMR is disabled in AI Studio via DISABLE_HMR env var.
       // Do not modifyâfile watching is disabled to prevent flickering during agent edits.
