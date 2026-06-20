@@ -232,13 +232,13 @@
         .hero {
             height: 100vh;
             position: relative;
-            background: linear-gradient(rgba(245, 239, 230, 0.75), rgba(245, 239, 230, 0.75)), url('img/hero.jpg') center/cover;
+            background: url('img/hero.jpg') center/cover;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
+            justify-content: flex-end;
+            align-items: flex-start;
+            text-align: left;
+            padding: 0 60px 80px;
         }
 
         .hero-content {
@@ -1284,8 +1284,6 @@
         </div>
         <div class="nav-right">
             <!-- EDITABLE: Botones Nav (Href y número WhatsApp) -->
-            <a href="https://wa.me/1234567890" target="_blank" class="btn btn-wsp nav-wsp"><i
-                    class="fab fa-whatsapp"></i> WhatsApp</a>
             <a href="agendar.html" class="btn btn-gold nav-agendar"><i class="fas fa-calendar-check"></i> Agendar
                 cita</a>
             <button class="hamburger" onclick="document.getElementById('mobMenu').classList.add('active')"><i
@@ -1305,12 +1303,6 @@
             <!-- EDITABLE: Títulos y subtítulos Hero -->
             <h1>Bienvenido a la mejor clinica del peru</h1>
             <p>Especialistas en transformar tu piel y potenciar tu belleza natural con la mejor tecnología.</p>
-
-            <div class="hero-btns">
-                <!-- EDITABLE: Botones Hero -->
-                <a href="agendar.html" class="btn btn-gold"><i class="fas fa-calendar-check"></i> Agendar cita</a>
-                <a href="#contacto" class="btn btn-outline" style="border-color:#2C2C2C;">Contáctanos primero</a>
-            </div>
 
             <!-- EDITABLE: Trust badge -->
             <div class="hero-trust">
