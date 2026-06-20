@@ -6,14 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><!-- EDITABLE: título de página -->Clínica Estética Premium</title>
 
-    <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Jost:wght@300;400;500&display=swap"
-        rel="stylesheet">
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
+        /* Fuentes locales */
+        @font-face {
+            font-family: 'Playfair Display';
+            src: url('fonts/PlayfairDisplay-VariableFont_wght.ttf') format('truetype');
+            font-weight: 400 900;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Playfair Display';
+            src: url('fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf') format('truetype');
+            font-weight: 400 900;
+            font-style: italic;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Helvetica';
+            src: url('fonts/helvetica-light-587ebe5a59211.ttf') format('truetype');
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Helvetica';
+            src: url('fonts/Helvetica.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Helvetica';
+            src: url('fonts/Helvetica-Oblique.ttf') format('truetype');
+            font-weight: 400;
+            font-style: italic;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Helvetica';
+            src: url('fonts/Helvetica-Bold.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Helvetica';
+            src: url('fonts/Helvetica-BoldOblique.ttf') format('truetype');
+            font-weight: 700;
+            font-style: italic;
+            font-display: swap;
+        }
         /* EDITABLE: Paleta de colores base */
         :root {
             --bg-primary: #F5EFE6;
@@ -24,8 +70,8 @@
             --text-light: #FDFAF6;
             --white-off: #FDFAF6;
             --whatsapp: #25D366;
-            --font-t: 'Cormorant Garamond', serif;
-            --font-p: 'Jost', sans-serif;
+            --font-t: 'Playfair Display', Georgia, serif;
+            --font-p: 'Helvetica', 'Helvetica Neue', Arial, sans-serif;
             --rad: 16px;
             --nav-h: 80px;
         }
@@ -342,10 +388,11 @@
         }
 
         .sb-item p {
-            font-size: 14px;
+            font-size: 13px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             color: #666;
+            font-weight: 300;
         }
 
         @media(max-width: 768px) {
@@ -915,11 +962,12 @@
             display: flex;
             gap: 10px;
             align-items: center;
-            font-size: 12px;
+            font-size: 11px;
             color: #999;
             margin-bottom: 12px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
+            font-weight: 300;
         }
 
         .blog-tag {
