@@ -387,8 +387,20 @@
             gap: 10px;
         }
 
+        /* CTA del header estilo Marina Essence: píldora sólida, sin icono, con sombra */
         .nav-agendar {
             font-size: 13px;
+            background: var(--gold);
+            color: #fff;
+            padding: 11px 28px;
+            border-radius: 999px;
+            box-shadow: 0 4px 14px rgba(184, 155, 106, 0.35);
+        }
+
+        .nav-agendar:hover {
+            background: var(--gold-dark);
+            box-shadow: 0 8px 22px rgba(184, 155, 106, 0.45);
+            transform: translateY(-1px);
         }
 
         @media(max-width: 899px) {
@@ -1650,8 +1662,7 @@
             </div>
             <div class="nav-right">
                 <!-- EDITABLE: Botones Nav (Href y número WhatsApp) -->
-                <a href="agendar.html" class="btn btn-gold nav-agendar"><i class="fas fa-calendar-check"></i> Agendar
-                    cita</a>
+                <a href="agendar.html" class="btn nav-agendar">Agendar cita</a>
                 <button class="hamburger" onclick="document.getElementById('mobMenu').classList.add('active')"><i
                         class="fas fa-bars"></i></button>
             </div>
