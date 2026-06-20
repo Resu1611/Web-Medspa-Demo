@@ -295,16 +295,17 @@
 
         .marquee {
             display: flex;
-            white-space: nowrap;
-            width: max-content;
-            animation: mq 20s linear infinite;
+            width: fit-content;
+            animation: mq 22s linear infinite;
             font-size: 14px;
             text-transform: uppercase;
             letter-spacing: 2px;
         }
 
         .marquee span {
-            padding: 0 40px;
+            flex-shrink: 0;
+            white-space: nowrap;
+            padding-right: 60px;
         }
 
         @keyframes mq {
