@@ -88,14 +88,7 @@
             color: var(--text-dark);
             background: var(--white-off);
             scroll-behavior: smooth;
-            padding-bottom: 70px;
             line-height: 1.6;
-        }
-
-        @media(min-width: 769px) {
-            body {
-                padding-bottom: 0;
-            }
         }
 
         h1,
@@ -628,17 +621,37 @@
                 margin-left: 0;
             }
             .tr-row {
-                flex-wrap: wrap;
-                padding: 20px;
-                gap: 14px;
+                flex-direction: column;
+                align-items: stretch;
+                padding: 22px;
+                gap: 16px;
+                position: relative;
             }
             .tr-left {
                 min-width: 0;
-                flex: 1;
+                width: 100%;
+                padding-right: 48px;
+            }
+            .tr-name {
+                font-size: 22px;
             }
             .tr-right {
                 width: 100%;
-                flex-wrap: wrap;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 14px;
+            }
+            .tr-desc {
+                width: 100%;
+            }
+            .tr-detail-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            .tr-toggle {
+                position: absolute;
+                top: 22px;
+                right: 22px;
             }
             .tr-photos {
                 grid-template-columns: 1fr;
@@ -2075,14 +2088,6 @@
                 reservados.</p>
         </div>
     </footer>
-
-    <!-- Elementos Mobile / Flotantes -->
-    <!-- EDITABLE: Enlaces flotantes -->
-    <a href="https://wa.me/1234567890" target="_blank" class="fab-wsp"><i class="fab fa-whatsapp"></i></a>
-
-    <div class="mob-bar">
-        <a href="https://wa.me/1234567890" target="_blank" class="btn btn-wsp" style="background:#fff;">💬 WhatsApp</a>
-    </div>
 
     <!-- LOGICA JS VANILLA -->
     <script>
