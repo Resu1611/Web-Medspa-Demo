@@ -296,14 +296,15 @@
         .marquee {
             display: flex;
             white-space: nowrap;
-            animation: mq 15s linear infinite;
+            width: max-content;
+            animation: mq 20s linear infinite;
             font-size: 14px;
             text-transform: uppercase;
             letter-spacing: 2px;
         }
 
         .marquee span {
-            margin: 0 30px;
+            padding: 0 40px;
         }
 
         @keyframes mq {
@@ -1318,9 +1319,8 @@
         <!-- Marquee -->
         <div class="marquee-wrap">
             <div class="marquee">
-                <span><!-- EDITABLE: Lista Marquee -->Hidrafacial &bull; Botox &bull; Láser &bull; Peeling &bull;
-                    Microagujas &bull; Modelado Corporal &bull; Hidrafacial &bull; Botox &bull; Láser &bull; Peeling
-                    &bull; Microagujas &bull; Modelado Corporal</span>
+                <span>Hidrafacial &bull; Botox &bull; Láser &bull; Peeling &bull; Microagujas &bull; Modelado Corporal &bull;</span>
+                <span aria-hidden="true">Hidrafacial &bull; Botox &bull; Láser &bull; Peeling &bull; Microagujas &bull; Modelado Corporal &bull;</span>
             </div>
         </div>
     </header>
