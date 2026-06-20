@@ -103,8 +103,8 @@
         .reveal {
             opacity: 0;
             transform: translateY(28px);
-            transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-                        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+            transition: opacity 0.91s cubic-bezier(0.22, 1, 0.36, 1),
+                        transform 0.91s cubic-bezier(0.22, 1, 0.36, 1);
             will-change: opacity, transform;
         }
         .reveal.in {
@@ -115,19 +115,19 @@
         .reveal-stagger > * {
             opacity: 0;
             transform: translateY(24px);
-            transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
-                        transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+            transition: opacity 0.78s cubic-bezier(0.22, 1, 0.36, 1),
+                        transform 0.78s cubic-bezier(0.22, 1, 0.36, 1);
         }
         .reveal-stagger.in > * {
             opacity: 1;
             transform: none;
         }
-        .reveal-stagger.in > *:nth-child(1) { transition-delay: 0.05s; }
-        .reveal-stagger.in > *:nth-child(2) { transition-delay: 0.12s; }
-        .reveal-stagger.in > *:nth-child(3) { transition-delay: 0.19s; }
-        .reveal-stagger.in > *:nth-child(4) { transition-delay: 0.26s; }
-        .reveal-stagger.in > *:nth-child(5) { transition-delay: 0.33s; }
-        .reveal-stagger.in > *:nth-child(6) { transition-delay: 0.40s; }
+        .reveal-stagger.in > *:nth-child(1) { transition-delay: 0.065s; }
+        .reveal-stagger.in > *:nth-child(2) { transition-delay: 0.156s; }
+        .reveal-stagger.in > *:nth-child(3) { transition-delay: 0.247s; }
+        .reveal-stagger.in > *:nth-child(4) { transition-delay: 0.338s; }
+        .reveal-stagger.in > *:nth-child(5) { transition-delay: 0.429s; }
+        .reveal-stagger.in > *:nth-child(6) { transition-delay: 0.52s; }
 
         /* ===== Carga progresiva del hero (al cargar la página) ===== */
         @keyframes heroRise {
@@ -136,12 +136,12 @@
         }
         .hero-anim {
             opacity: 0;
-            animation: heroRise 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+            animation: heroRise 1.17s cubic-bezier(0.22, 1, 0.36, 1) forwards;
         }
-        .hero-anim.d1 { animation-delay: 0.15s; }
-        .hero-anim.d2 { animation-delay: 0.30s; }
-        .hero-anim.d3 { animation-delay: 0.45s; }
-        .hero-anim.d4 { animation-delay: 0.60s; }
+        .hero-anim.d1 { animation-delay: 0.195s; }
+        .hero-anim.d2 { animation-delay: 0.39s; }
+        .hero-anim.d3 { animation-delay: 0.585s; }
+        .hero-anim.d4 { animation-delay: 0.78s; }
 
         /* Respeta la preferencia de movimiento reducido */
         @media (prefers-reduced-motion: reduce) {
@@ -292,56 +292,99 @@
         }
 
         /* iOS Glass Navbar */
+        /* ===== Header flotante tipo píldora (estilo Marina) ===== */
         .nav {
             position: fixed;
-            top: 15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 95%;
-            max-width: 1200px;
-            height: 60px;
-            background: rgba(253, 250, 246, 0.6);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            border-radius: 40px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 14px 16px;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            pointer-events: none;
+        }
+
+        .nav-inner {
+            pointer-events: auto;
+            width: 100%;
+            max-width: 1200px;
             display: flex;
             align-items: center;
-            padding: 0 20px;
             justify-content: space-between;
+            padding: 12px 22px;
+            border: 1px solid transparent;
+            border-radius: 999px;
+            background: transparent;
+            transition: max-width 0.5s ease-in-out, background 0.5s ease,
+                        box-shadow 0.5s ease, border-color 0.5s ease, padding 0.5s ease;
+        }
+
+        /* Estado al hacer scroll: se encoge a una píldora blanca con sombra */
+        .nav.scrolled .nav-inner {
+            max-width: 960px;
+            padding: 9px 22px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-color: rgba(0, 0, 0, 0.06);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.10);
         }
 
         .nav-logo {
             font-family: var(--font-t);
             font-size: 24px;
             font-weight: 600;
+            color: #fff;
+            transition: color 0.4s ease;
+        }
+
+        .nav.scrolled .nav-logo {
+            color: var(--text-dark);
         }
 
         .nav-links {
             display: none;
-            gap: 20px;
+            gap: 34px;
         }
 
         .nav-links a {
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 500;
-            transition: 0.3s;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.88);
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav.scrolled .nav-links a {
+            color: var(--text-dark);
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.3s ease;
         }
 
         .nav-links a:hover {
             color: var(--gold);
         }
 
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
         .nav-right {
             display: flex;
             align-items: center;
             gap: 10px;
-        }
-
-        .nav-wsp {
-            display: none;
         }
 
         .nav-agendar {
@@ -360,22 +403,17 @@
             background: none;
             border: none;
             cursor: pointer;
+            color: #fff;
+            transition: color 0.4s ease;
+        }
+
+        .nav.scrolled .hamburger {
             color: var(--text-dark);
         }
 
         @media(min-width: 900px) {
-            .nav {
-                padding: 0 30px;
-                height: 70px;
-                top: 20px;
-            }
-
             .nav-links {
                 display: flex;
-            }
-
-            .nav-wsp {
-                display: inline-flex;
             }
 
             .hamburger {
@@ -1599,22 +1637,24 @@
         </div>
     </div>
 
-    <!-- NAVBAR -->
-    <nav class="nav">
-        <div class="nav-logo"><!-- EDITABLE: Logo -->LUMINA.</div>
-        <div class="nav-links">
-            <!-- EDITABLE: Links de navegación -->
-            <a href="#tratamientos">Tratamientos</a>
-            <a href="#nosotros">Nosotros</a>
-            <a href="#resultados">Resultados</a>
-            <a href="#contacto">Contacto</a>
-        </div>
-        <div class="nav-right">
-            <!-- EDITABLE: Botones Nav (Href y número WhatsApp) -->
-            <a href="agendar.html" class="btn btn-gold nav-agendar"><i class="fas fa-calendar-check"></i> Agendar
-                cita</a>
-            <button class="hamburger" onclick="document.getElementById('mobMenu').classList.add('active')"><i
-                    class="fas fa-bars"></i></button>
+    <!-- NAVBAR (estilo píldora flotante) -->
+    <nav class="nav" id="mainNav">
+        <div class="nav-inner">
+            <div class="nav-logo"><!-- EDITABLE: Logo -->LUMINA.</div>
+            <div class="nav-links">
+                <!-- EDITABLE: Links de navegación -->
+                <a href="#tratamientos">Tratamientos</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#resultados">Resultados</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+            <div class="nav-right">
+                <!-- EDITABLE: Botones Nav (Href y número WhatsApp) -->
+                <a href="agendar.html" class="btn btn-gold nav-agendar"><i class="fas fa-calendar-check"></i> Agendar
+                    cita</a>
+                <button class="hamburger" onclick="document.getElementById('mobMenu').classList.add('active')"><i
+                        class="fas fa-bars"></i></button>
+            </div>
         </div>
     </nav>
 
@@ -2156,6 +2196,15 @@
     <script>
         // Año Footer
         document.getElementById('y').innerText = new Date().getFullYear();
+
+        // ===== Header flotante: encoge a píldora blanca al hacer scroll =====
+        (function () {
+            const nav = document.getElementById('mainNav');
+            if (!nav) return;
+            const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 30);
+            onScroll();
+            window.addEventListener('scroll', onScroll, { passive: true });
+        })();
 
         // ===== Reveal progresivo al hacer scroll =====
         (function () {
